@@ -1,0 +1,8 @@
+# Exclude data files but keep folder structure
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Mac system files
+.DS_Store
