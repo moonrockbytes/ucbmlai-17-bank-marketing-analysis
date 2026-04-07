@@ -35,7 +35,6 @@ Module 17/
 │       ├── bank_encoded.csv
 │       ├── bank_features.csv
 │       └── bank_target.csv
-└── CRISP-DM-BANK.pdf       — Dataset reference paper
 ```
 
 ---
