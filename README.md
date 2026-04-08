@@ -1,10 +1,4 @@
-# Required Assignment 17.1: Comparing Classifiers
-
-**Author:** Rakesh Chandrasekaran
-**Course:** Professional Certificate in ML and AI
-**Module:** 17 — Comparing Classifiers
-
----
+# Bank Marketing Analysis: Comparing Classifiers
 
 ## Overview
 
@@ -23,15 +17,15 @@ This project compares the performance of four classification algorithms — K-Ne
 ## Project Structure
 
 ```
-Module 17/
+ucbmlai-17-bank-marketing-analysis/
 ├── bank_marketing_analysis.ipynb   — Main Jupyter Notebook
-├── README.md               — Project summary (this file)
+├── README.md                       — Project summary (this file)
 ├── data/
-│   ├── raw/                — Original unprocessed dataset
+│   ├── raw/                        — Original unprocessed dataset
 │   │   ├── bank-additional-full.csv
 │   │   ├── bank-additional.csv
 │   │   └── bank-additional-names.txt
-│   └── processed/          — Cleaned and encoded dataset
+│   └── processed/                  — Cleaned and encoded dataset
 │       ├── bank_encoded.csv
 │       ├── bank_features.csv
 │       └── bank_target.csv
@@ -39,9 +33,47 @@ Module 17/
 
 ---
 
+## Setup Instructions
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/moonrockbytes/ucbmlai-17-bank-marketing-analysis.git
+cd ucbmlai-17-bank-marketing-analysis
+```
+
+### 2. Create and activate a virtual environment
+
+**macOS / Linux:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+**Windows:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install jupyter pandas numpy scikit-learn matplotlib seaborn
+```
+
+### 4. Launch Jupyter Notebook
+
+```bash
+jupyter notebook bank_marketing_analysis.ipynb
+```
+
+---
+
 ## Summary of Findings
 
 ### Business Problem
+
 A Portuguese bank conducts phone-based marketing campaigns to sell term deposits. With only 11.3% of clients subscribing, the bank is spending resources on 88.7% of contacts that result in no subscription. The goal is to build a classifier that predicts which clients are likely to subscribe, enabling more targeted and efficient outreach.
 
 ### Model Performance
@@ -55,6 +87,7 @@ A Portuguese bank conducts phone-based marketing campaigns to sell term deposits
 | SVM (Tuned) | 0.8982 | 0.8994 | 0.7308 | 0.7195 ± 0.0090 |
 
 ### Recommended Model
+
 **Logistic Regression (Tuned)** is the recommended model. While the Decision Tree achieves a marginally higher test ROC-AUC (0.8043 vs 0.8015), the difference of 0.0028 is not practically significant. Logistic Regression achieves a higher cross-validation mean (0.7894 vs 0.7868), is more stable, faster to deploy, requires fewer hyperparameters, and provides interpretable coefficients that allow the bank to understand and justify predictions.
 
 ### Key Actionable Insights
@@ -67,6 +100,7 @@ A Portuguese bank conducts phone-based marketing campaigns to sell term deposits
 6. **Target students and retirees** — Both groups show above-average subscription rates and could benefit from tailored campaign messaging.
 
 ### Next Steps
+
 1. Evaluate different prediction thresholds based on the cost of a wasted call versus the revenue from a successful subscription.
 2. Integrate the model into the bank's customer management system for real-time client scoring before calls.
 3. Run a controlled A/B test comparing model-guided targeting against traditional outreach methods.
