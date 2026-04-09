@@ -88,7 +88,7 @@ A Portuguese bank conducts phone-based marketing campaigns to sell term deposits
 
 ### Recommended Model
 
-**Logistic Regression (Tuned)** is the recommended model. While the Decision Tree achieves a marginally higher test ROC-AUC (0.8043 vs 0.8015), the difference of 0.0028 is not practically significant. Logistic Regression achieves a higher cross-validation mean (0.7894 vs 0.7868), is more stable, faster to deploy, requires fewer hyperparameters, and provides interpretable coefficients that allow the bank to understand and justify predictions.
+**Logistic Regression (Tuned)** is the recommended model. Decision Tree (Tuned) and Logistic Regression (Tuned) are virtually tied on test ROC-AUC (0.8043 vs 0.8015), a difference of only 0.0028. Logistic Regression achieves a marginally higher cross-validation mean (0.7894 vs 0.7868), is more stable, significantly faster to train and score in production, requires fewer hyperparameters to tune, and provides interpretable coefficients that allow the bank to understand and justify predictions.
 
 ### Key Actionable Insights
 
@@ -101,8 +101,8 @@ A Portuguese bank conducts phone-based marketing campaigns to sell term deposits
 
 ### Next Steps
 
-1. Evaluate different prediction thresholds based on the cost of a wasted call versus the revenue from a successful subscription.
-2. Integrate the model into the bank's customer management system for real-time client scoring before calls.
-3. Run a controlled A/B test comparing model-guided targeting against traditional outreach methods.
-4. Apply oversampling techniques to address class imbalance and improve identification of potential subscribers.
-5. Benchmark ensemble methods such as Random Forest and Gradient Boosting for potential performance gains.
+1. **Deploy with probability threshold tuning** — The recommended Logistic Regression model outputs a subscription probability per client. Evaluating different threshold values based on the cost of a wasted call versus the revenue from a successful subscription would allow the bank to align the model with its business priorities.
+2. **Real-time scoring pipeline** — Integrating the model into the bank's customer management system would allow agents to see a subscription probability score for each client before making a call, enabling real-time prioritization of outreach.
+3. **A/B test model-guided vs. random outreach** — Running a controlled experiment comparing model-guided targeting against traditional methods would validate whether the model delivers measurable improvements in real-world campaign performance.
+4. **Address class imbalance** — Applying oversampling techniques or adjusting the model to penalize misclassification of subscribers more heavily could improve the model's ability to identify potential subscribers in future campaigns.
+5. **Explore ensemble methods** — Benchmarking more advanced methods such as Random Forest and Gradient Boosting against the current model could reveal whether further performance gains are achievable.
